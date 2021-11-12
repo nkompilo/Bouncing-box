@@ -1,0 +1,25 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >nkompilo_b</div>
+  <script type="text/javascript">
+    
+    var sx = 1;
+    var sy = 1;
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    
+        function boxbounce() {
+            document.getElementById("my_bouncing_box").style.left = parseInt(document.getElementById("my_bouncing_box").style.left) + sx;
+            document.getElementById("my_bouncing_box").style.top = parseInt(document.getElementById("my_bouncing_box").style.top) + sy;
+            if ((parseInt(document.getElementById("my_bouncing_box").style.left) + parseInt(document.getElementById("my_bouncing_box").offsetWidth))  == (parseInt(window.innerWidth))){
+                sx = sx * -1;
+            }else if ((parseInt(document.getElementById("my_bouncing_box").style.left) == 0)){
+                sx = sx * -1;
+            }else if ((parseInt(document.getElementById("my_bouncing_box").style.top) + parseInt(document.getElementById("my_bouncing_box").offsetHeight))  == (parseInt(window.innerHeight))){
+                sy = -sy * 1;
+            }else if ((parseInt(document.getElementById("my_bouncing_box").style.top) == 0)){
+                sy = sy * -1}
+            };
+        setInterval(boxbounce, 10)
+    
+  </script>
+</html>
